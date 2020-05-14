@@ -8,7 +8,7 @@
 body{
   background-image: url('https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg');
   backgroud-size: auto 100vh;
-  font-family: Arial; 
+  font-family: 'Roboto', sans-serif; 
   height: 100vh;
 }
 
@@ -68,14 +68,66 @@ a:hover{
 }
 
 .site-title{
-  font-size: 4em; 
+  font-size: 4em;
+  font-family: 'Share Tech Mono', monospace; 
 }
 
 .site-subtitle{
   font-style: italic;
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 2em;
+}
+
+.portfolio{
+  padding: 2em;
+  height: 100vh;
+  margin-bottom: 1.5em;
+  font-size: 1.2em;
+}
+
+.portfolio h2{
+  font-family: 'DM Mono', monospace;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.portfolio .grid{
+  display: grid; /* grade */
+  gap: 2em;
+}
+
+@media (min-width: 560px){
+  .portfolio .grid{
+   grid-template-columns: 240px 240px;
+}
+
+@media (min-width: 880px){
+  .portfolio .grid{
+   grid-template-columns: repeat(3,260px);
+   align-content: center;
+   justify-content: center;
+  height: calc(100vh - 4em - 48px);
+}
+
+.portfolio figure{
+  text-align: center;
 }
 
 .img-portfolio{
   height: 180px;
-  width: 180px;
+  width: 240px;
+  object-fit: cover;
+}
+
+@media(min-width: 1200px){
+  .img-portfolio{
+    height: 10em;
+    width: 12em;
+  }
+
+/*@media(min-width: 240px){
+  .img-portfolio{
+    height: 5em;
+    width: 7em;
+  }  */
 }
