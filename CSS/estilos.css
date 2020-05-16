@@ -37,6 +37,7 @@ header{
   position: fixed; /* fixa barra de menu */
   top: 0; /* posiciona barra de menu no topo */
   width:100vw;
+  z-index: 1;
 }
 
 .menu ul{
@@ -50,6 +51,11 @@ header{
 .menu a {
   display: block; /* bloco */
   padding: 10px 20px; /* aumenta a area de click -- precisa ser bloco para funcionar*/
+  transition: text-shadow, color 2s;
+}
+
+.menu a:hover{
+  text-shadow: 0px 0px 10px whitesmoke;
 }
 
 a{
@@ -59,6 +65,19 @@ a{
 
 a:hover{
   text-decoration: underline;
+}
+
+.titulo{
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{
+  100%{
+   transform: scale(1) translateY(0);
+   opacity: 1;
+  }
 }
 
 .site-subtitle,
@@ -78,13 +97,15 @@ a:hover{
   line-height: 2em;
 }
 
+.contato,
 .portfolio{
   padding: 2em;
-  height: 100vh;
+  min-height: 100vh;
   margin-bottom: 1.5em;
   font-size: 1.2em;
 }
 
+.contato h2,
 .portfolio h2{
   font-family: 'DM Mono', monospace;
   text-align: center;
@@ -106,7 +127,7 @@ a:hover{
    grid-template-columns: repeat(3,260px);
    align-content: center;
    justify-content: center;
-  height: calc(100vh - 4em - 48px);
+   height: calc(100vh - 4em - 48px);
 }
 
 .portfolio figure{
@@ -117,6 +138,11 @@ a:hover{
   height: 180px;
   width: 240px;
   object-fit: cover;
+  transition: transform 500ms;
+}
+
+.img-portfolio:hover{
+  transform: scale(1.2);
 }
 
 @media(min-width: 1200px){
@@ -125,9 +151,18 @@ a:hover{
     width: 12em;
   }
 
-/*@media(min-width: 240px){
-  .img-portfolio{
-    height: 5em;
-    width: 7em;
-  }  */
+.contato .icons{
+  text-align: center;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size:5em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover{
+  text-decoration: none;
+  text-shadow: 0px 0px 10px whitesmoke; /* ilumina o icone quando passa o mouse */
 }
